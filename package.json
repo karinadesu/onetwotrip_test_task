@@ -1,0 +1,27 @@
+{
+  "name": "onetwotrip_test_task",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter mochawesome"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/karinadesu/onetwotrip_test_task.git"
+  },
+  "author": "Karina Yakhina",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "chai-json": "^1.0.0",
+    "mochawesome": "^6.1.1"
+  },
+  "mocha": {
+    "spec": "spec/onetwotrip.spec.js"
+  },
+  "devDependencies": {
+    "mocha": "^8.1.3"
+  }
+}
