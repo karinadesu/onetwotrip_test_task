@@ -25,7 +25,7 @@ describe("OneTwoTrip Test Tasks", function () {
                     //Проверка на наличие сочетания символов в названиях городов в ответе
                     expect(res.body.data[i].name).to.include(CONST.DEPARTURE_VALUE);
                     //Проверка на присутствие необходимых ключей в ответе
-                    expect(res.body.data[i]).to.have.all.keys(CONST.DEPARTURE_KEYS_RESPONSE);//
+                    expect(res.body.data[i]).to.have.all.keys(CONST.DEPARTURE_KEYS_RESPONSE);
                     
                 }
 
@@ -39,7 +39,7 @@ describe("OneTwoTrip Test Tasks", function () {
             .get('/')
             .redirects(0)
             .end(function (err, res) {
-                
+
                 expect(res.status).to.equal(301);
                 expect(res).to.redirectTo(CONST.REDIRECTED_BASE_URL);
                 done();
