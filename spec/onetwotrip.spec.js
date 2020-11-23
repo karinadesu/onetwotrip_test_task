@@ -13,17 +13,20 @@ describe("OneTwoTrip Test Tasks", function () {
 
         chai.request(CONST.BASE_URL)
             .get('/_bus/geo/suggest')
-            .query({ query: CONST.DEPARTURE_VALUE, limit: CONST.LIMIT })
+            .query({ query: CONST.DEPARTURE_VALUE, limit: CONST.LIMIT }) 
             .end(function (err, res) {
 
                 expect(res.status).to.equal(200);
-                expect(res.body.data.length).to.equal(5);
+                expect(res.body.data.length).to.equal(CONST.LIMIT);
                 expect(res).to.be.json;
 
                 for (let i = 0; i < res.body.data.length; i++) {
-                    
+
+                    //Проверка на наличие сочетания символов в названиях городов в ответе
                     expect(res.body.data[i].name).to.include(CONST.DEPARTURE_VALUE);
-                    expect(res.body.data[i]).to.have.all.keys(CONST.DEPARTURE_KEYS_RESPONSE);
+                    //Проверка на присутствие необходимых ключей в ответе
+                    expect(res.body.data[i]).to.have.all.keys(CONST.DEPARTURE_KEYS_RESPONSE);//
+                    
                 }
 
                 done();
@@ -36,6 +39,7 @@ describe("OneTwoTrip Test Tasks", function () {
             .get('/')
             .redirects(0)
             .end(function (err, res) {
+                
                 expect(res.status).to.equal(301);
                 expect(res).to.redirectTo(CONST.REDIRECTED_BASE_URL);
                 done();

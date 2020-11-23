@@ -1,1 +1,9 @@
-# onetwotrip_test_task
+# Установка и запуск автотестов
+
+Установить NodeJS: https://nodejs.org/en/download/package-manager/
+
+
+Открыть приложение в среде разработки.
+Для установки необходимых пакетов выполнить команду npm install.
+
+Запуск тестов производится командой npm run test.
